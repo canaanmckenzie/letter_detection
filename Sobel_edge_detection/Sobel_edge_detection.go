@@ -53,11 +53,11 @@ func main() {
 	for x := 1; x < width-1; x++ {
 		for y := 1; y < height-1; y++ {
 			// Compute the Gx and Gy values using the Sobel operator - rmove placeholder 0 * values
-			Gx := -1*int(grayImg.GrayAt(x-1, y-1).Y) + 0*int(grayImg.GrayAt(x, y-1).Y) + 1*int(grayImg.GrayAt(x+1, y-1).Y) +
-				-2*int(grayImg.GrayAt(x-1, y).Y) + 0*int(grayImg.GrayAt(x, y).Y) + 2*int(grayImg.GrayAt(x+1, y).Y) +
-				-1*int(grayImg.GrayAt(x-1, y+1).Y) + 0*int(grayImg.GrayAt(x, y+1).Y) + 1*int(grayImg.GrayAt(x+1, y+1).Y)
+			Gx := -1*int(grayImg.GrayAt(x-1, y-1).Y)  + 1*int(grayImg.GrayAt(x+1, y-1).Y) +
+				-2*int(grayImg.GrayAt(x-1, y).Y)  + 2*int(grayImg.GrayAt(x+1, y).Y) +
+				-1*int(grayImg.GrayAt(x-1, y+1).Y)  + 1*int(grayImg.GrayAt(x+1, y+1).Y)
 			Gy := -1*int(grayImg.GrayAt(x-1, y-1).Y) - 2*int(grayImg.GrayAt(x, y-1).Y) - 1*int(grayImg.GrayAt(x+1, y-1).Y) +
-				0*int(grayImg.GrayAt(x-1, y).Y) + 0*int(grayImg.GrayAt(x, y).Y) + 0*int(grayImg.GrayAt(x+1, y).Y) +
+				0*int(grayImg.GrayAt(x-1, y).Y)  +
 				1*int(grayImg.GrayAt(x-1, y+1).Y) + 2*int(grayImg.GrayAt(x, y+1).Y) + 1*int(grayImg.GrayAt(x+1, y+1).Y)
 
 			// Compute the magnitude of the gradient
